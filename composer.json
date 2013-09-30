@@ -1,0 +1,30 @@
+{
+    "name": "ThomasLarsson/PriorityQueue",
+    "type": "library",
+    "description": "Ascending/descending PriorityQueues. Order maintained for nodes with equal priority on dequeue",
+    "keywords": [
+        "PriorityQueue",
+        "Ascending PriorityQueue",
+        "Descending PriorityQueue",
+        "Ascending PriorityQueue",
+        "Order maintained for nodes with equal priority on dequeue"
+    ],
+    "homepage": "http://github.com/ThomasLarsson/PriorityQueue",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Maurstad Larsson",
+            "email": "thomas.m.larsson@gmail.com",
+            "homepage": "n/a",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "ThomasLarsson": "src"
+        }
+    }
+}

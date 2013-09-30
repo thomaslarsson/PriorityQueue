@@ -1,5 +1,5 @@
 {
-    "name": "ThomasLarsson/PriorityQueue",
+    "name": "thomaslarsson/priority-queue",
     "type": "library",
     "description": "Ascending/descending PriorityQueues. Order maintained for nodes with equal priority on dequeue",
     "keywords": [

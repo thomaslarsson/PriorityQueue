@@ -16,22 +16,32 @@ namespace ThomasLarsson\PriorityQueue;
  * @license http://URL MIT-license
  */
 
-class MaxPriorityQueue extends PriorityQueue
+class MaxPriorityQueue extends \SplPriorityQueue
 {
+    /** @var int        The priority used internally by nodes */
+    protected $internalTimePriority;
+
+    /**
+     * public constructor
+     */
+
+    public function __construct()
+    {
+        $this->internalTimePriority = 0;
+    }
 
     /**
      * Insert a node in the Queue
-     * 
-     * @param type $value
-     * @param type $priority
+     *
+     * @param AnyType $value        The value to insert
+     * @param int $priority         The priority
      */
-    
-    public function insert($value, $priority) 
+
+    public function insert($value, $priority)
     {
-        parent::insert($value, $priority);
-        $this->increasePriority();
+        parent::insert($value, array((int)$priority, $this->internalTimePriority--));
     }
-    
+
     /**
      * Sorts the nodes decending
      *

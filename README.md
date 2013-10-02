@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/thomaslarsson/Football.png?branch=master)](https://travis-ci.org/thomaslarsson/Football)
-PriorityQueue
+PriorityQueue [![Build Status](https://travis-ci.org/thomaslarsson/Football.png?branch=master)](https://travis-ci.org/thomaslarsson/Football)
 =============
 
 Ascending/descending PriorityQueues. Order maintained for nodes with equal priority on dequeue.

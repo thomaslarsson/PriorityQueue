@@ -1,15 +1,18 @@
-<?php
+<?php namespace ThomasLarsson\Queue\Test;
 
-namespace ThomasLarsson\Queue\Test;
-
-require dirname(dirname(__FILE__)) . '../../vendor/autoload.php';
+// Require Composer autoloader
+require dirname(__DIR__) . '../../vendor/autoload.php';
 
 /**
  * Description of AscendingQueueTest
  *
- * @author Thomas
+ * @author Thomas Maurstad Larsson <thomas.m.larsson@gmail.com>
+ * @version 1.0
+ *
+ * @license http://URL MIT-license
  */
 
+// Declare needed namespaces
 use ThomasLarsson\PriorityQueue\PriorityQueueFactory as PriorityQueueFactory;
 
 class PriorityQueueFactoryTest extends \PHPUnit_Framework_TestCase

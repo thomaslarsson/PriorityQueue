@@ -1,13 +1,14 @@
-<?php
-
-namespace ThomasLarsson\PriorityQueue;
+<?php namespace ThomasLarsson\PriorityQueue;
 
 /**
  * Returns PriorityQueues sorted in order specified
  *
  * Order maintained for nodes with equal priority on dequeue
  * 
- * @author Thomas
+ * @author Thomas Maurstad Larsson <thomas.m.larsson@gmail.com>
+ * @version 1.0
+ *
+ * @license http://URL MIT-license
  */
 
 use ThomasLarsson\PriorityQueue\MinPriorityQueue as MinPriorityQueue;
@@ -44,5 +45,3 @@ class PriorityQueueFactory
     }
 
 }
-
-?>

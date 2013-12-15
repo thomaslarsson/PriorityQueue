@@ -1,6 +1,4 @@
-<?php
-
-namespace ThomasLarsson\PriorityQueue;
+<?php namespace ThomasLarsson\PriorityQueue;
 
 /**
  * MaxPriorityQueue is a Priority Queue built on a max heap,
@@ -57,5 +55,3 @@ class MaxPriorityQueue extends \SplPriorityQueue
         return $timeAt < $other ? 1 : -1;
     }
 }
-
-?>

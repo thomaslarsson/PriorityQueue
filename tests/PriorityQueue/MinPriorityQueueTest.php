@@ -1,15 +1,18 @@
-<?php
+<?php namespace ThomasLarsson\Queue\Test;
 
-namespace ThomasLarsson\Queue\Test;
-
-require dirname(dirname(__FILE__)) . '../../vendor/autoload.php';
+// Require Composer autoloader
+require dirname(__DIR__) . '../../vendor/autoload.php';
 
 /**
  * Description of AscendingQueueTest
  *
- * @author Thomas
+ * @author Thomas Maurstad Larsson <thomas.m.larsson@gmail.com>
+ * @version 1.0
+ *
+ * @license http://URL MIT-license
  */
 
+// Declare needed namespaces
 use ThomasLarsson\PriorityQueue\MinPriorityQueue as MinPriorityQueue;
 
 class MinPriorityQueueTest extends \PHPUnit_Framework_TestCase
@@ -20,15 +23,25 @@ class MinPriorityQueueTest extends \PHPUnit_Framework_TestCase
         $this->queue = new MinPriorityQueue();
     }
 
-    public function testAddingOne()
+    /**
+     * Make sure adding elements is reflected in the count
+     */
+    
+    public function testThatCountIsAffectedByInserts()
     {
-        $expected = 1;
+        $expectedCount = 1;
         $this->queue->insert("1", array(0, 0));
 
-        $this->assertEquals($this->queue->count(), $expected);
+        $this->assertEquals($expectedCount, $this->queue->count());
     }
-
-    public function testIsAscending()
+    
+    /**
+     * Check that the MinPriorityQueue sorts nodes in ascending order. (Low to high)
+     * 
+     * This is the expected behavior for a min heap implementation.
+     */
+    
+    public function testThatTheQueueSortsDescending()
     {
         $expectedResult = array("0","1","2","3");
 
@@ -45,26 +58,12 @@ class MinPriorityQueueTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-    public function testPrecision()
-    {
-        $expectedResult = array("0","1","2","3");
-
-        // Insert data
-        $this->queue->insert("0", 3);
-        $this->queue->insert("1", 2);
-        $this->queue->insert("2", 1);
-        $this->queue->insert("3", 0);
-
-         // Build result list
-        foreach ( $this->queue as $data )
-        {
-            $result[] = $data;
-        }
-
-        $this->assertEquals($expectedResult, $result);
-    }
-
-    public function testIdentical()
+    /**
+     * Expect nodes to keep the insert order when nodes are inserted with
+     * equal priority.
+     */
+    
+    public function testThatInsertOrderIsKeptOnEqualPriorityInserts()
     {
         $expectedResult = array(0, 1, 2, 3, 4);
 
@@ -81,8 +80,12 @@ class MinPriorityQueueTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($expectedResult, $result);
     }
-
-    public function testAlphaNumericalValues()
+    
+    /**
+     * Make sure that alphanumerical values are sorted correctly
+     */
+    
+    public function testThatAlphaNumericalInputIsSortedAsExpected()
     {
         $expectedResult = array("a", "b", "c", "d", "e");
 

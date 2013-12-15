@@ -1,10 +1,8 @@
-<?php
-
-namespace ThomasLarsson\PriorityQueue;
+<?php namespace ThomasLarsson\PriorityQueue;
 
 /**
  * MinPriorityQueue is a Priority Queue built on a min heap,
- * i.e sorted in ascending order. (Low to hight)
+ * i.e sorted in ascending order. (Low to high)
  *
  * Order maintained for nodes with equal priority on dequeue
  *
@@ -60,5 +58,3 @@ class MinPriorityQueue extends \SplPriorityQueue
         return $timeAt < $other ? -1 : 1;
     }
 }
-
-?>
